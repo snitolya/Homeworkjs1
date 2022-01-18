@@ -110,44 +110,29 @@ console.log(str); */
 
 /*Задача
 Напишите функцию которая принимает r 
-и возвращает длину окружности радиусом r
+и возвращает длину окружности радиусом r 
+
 
 const PI = 3.14159265359;
-let r = 7;
-function calcCircleArea(r) {
-  if (r>=0){
-    return 2 * Math.PI * r;
-  }else{
-    return "wrong";
-  }
+function calcLengthCircle(radius){
+  let LengthCircle = PI * (radius*2);
+
+  return LengthCircle;
 }
-console.log(calcCircleArea(r)); 
+let funcResult = calcLengthCircle(7);
+console.log(Длина окружности: ${funcResult}); */
 
 
-let r = 7;
-function calcCircleArea(r) {
-    return 2 * Math.PI * r;
-}
-console.log(calcCircleArea(r));
-
-
-которая принимает r ??????????????????????????         */
-
-
-
-
-
-/* Задача
+/* Задача 8
 Напишите функцию, которая принимает цену товара price 
-и возврадает новую цену с скидкой 3.5 % 
-*/
+и возврадает новую цену с скидкой 3.5 %
+let discount = 3.5;
 
-let priceProduct = +prompt(' Цена товара');
+function calcPriceWithDisc(price){
+  let calcDics = (price*discount)/100;
+  let newPriceWithDics = price-calcDics;
 
-function discountPrice(){
-  return priceProduct*3,5/100;
+  return newPriceWithDics;
 }
-let result = discountPrice();
-console.log(result);
-
-
+let resultFunc = calcPriceWithDisc(120);
+console.log( Цена : ${resultFunc} ); */
