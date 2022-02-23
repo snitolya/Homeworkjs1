@@ -1,0 +1,54 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        li{
+            list-style: square;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <p>text1</p>
+        </li>
+        <li>
+            <p class="small">text2</p>
+        </li>
+        <li>
+            <p>text3</p>
+        </li>
+        <li>
+            <p class="big">text4</p>
+        </li>
+        <li>
+            <p>text5</p>
+        </li>
+    </ul>
+
+
+    <script>
+   
+        const textUnderline = Array.from(document.body.querySelectorAll('ul>li>p'));
+        textUnderline.forEach((p,index)=> {
+            if(Number.parseInt(index)%2==1){   // текст в четных тегах p подчеркнутым
+            p.style.textDecoration ='underline'
+            }
+        });
+
+        const tegP = document.querySelectorAll("ul>li>p>#text3") 
+        tegP.remove()
+      </script> 
+
+
+</body>
+</html>
+
+Удалите тег p с текстом text3
+Добавьте всем элементам li CSS-класс item
+Удалите все CSS-классы у тегов p 
+
+
+
+
