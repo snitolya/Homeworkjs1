@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+
+<body>
+  <style>
+    table td{
+        padding : 10px;
+        border: 1px solid black;
+    }
+</style>
+
+
+    <script>
+
+// Задача 3
+// Написать функцию, которая строит таблицу n (кол-во столбцов) 
+// на k (кол-во строк), используя Javascript. 
+// В каждую ячейку записать случайное число.
+
+// При нажатии на любую ячейку таблицы, 
+// закрашивать все соседние с ней ячейки в случайный цвет
+
+
+
+const div = document.createElement('div'); 
+document.body.prepend(div);
+
+
+function getRandom() {
+  return Math.random();
+}
+
+function randomColor(){
+    return '#' + Math.ceil(Math.random()*1000000);
+ }
+
+
+createTable(div , 5, 5); 
+function createTable(parent, kolonka, rady) { // создаём функцию, parent - эл,в котором монтируется наша табличка 
+        let table = document.createElement('table'); 
+
+
+for (let i = 0; i < rady; i++) { // сначала переюираем ряды.
+        const tr =document.createElement('tr') ; // 1 цикл создаёт tr -ряды таблички
+        tr.textContent = getRandom();
+        table.append(tr);
+    for (let a = 0; a < kolonka; a++) {
+        const td =document.createElement('td') ;// 2 цикл создаёт td - колонки таблички и заполняет 1 цикл td
+        td.textContent = getRandom();
+        tr.append(td);   
+      }   
+}
+parent.append(table); // в parent закидываем нашу таблицу
+}
+
+
+
+function addColor(el){
+    let amountElement = el.nextElementSibling;
+    let adjustAmount = el.previousElementSibling;
+
+  let sum = parseInt(amountElement.innerHTML) + parseInt(adjustAmount.innerHTML);
+  console.log(sum);
+}
+
+
+document.addEventListener("click", e => {
+  addColor(e.target);
+});
+
+    
+    </script>
+
+</body>
+
+</html>
