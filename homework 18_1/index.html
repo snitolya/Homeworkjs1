@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+
+</head>
+
+<img id="image" src="" alt="УПС" onClick="imgsrc();">
+
+<body>
+
+    
+    <script>
+// Задача 2
+// Дан массив с картинками. 
+// Сделать, чтобы при нажатии на картинку она менялась на следующую,
+// последняя меняется на первую. На странице должен быть только один элемент с тегом <img>
+
+
+const images = [
+    'https://cdn.pixabay.com/photo/2019/10/15/13/40/winter-4551699_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2021/04/22/06/40/duck-6198196_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2021/04/17/23/58/bunny-6187026_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2020/09/18/21/16/child-5582985_960_720.jpg'
+]
+let i= 0;
+        let image=document.getElementById("image");
+        document.body.prepend(image); 
+        function imgsrc() {
+            i++;
+            image.src = images[i];
+        }
+//image.addEventListener('click', imgsrc); 
+
+
+// function changeimage(img) {
+//       if(img.src=="https://cdn.pixabay.com/photo/2019/10/15/13/40/winter-4551699_960_720.jpg")
+//           img.src="https://cdn.pixabay.com/photo/2021/04/22/06/40/duck-6198196_960_720.jpg";
+//       else
+//           img.src="https://cdn.pixabay.com/photo/2021/04/17/23/58/bunny-6187026_960_720.jpg";
+//   }
+
+    </script>
+</body>
+
+</html>

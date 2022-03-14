@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            width: 50px;
+            height: 19px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul id="bar"></ul>
+    <form>
+        <input type="text" value="" id="text">
+        <input type="button" name="press" value="Нажми" />
+    </form>
+    <script>
+        let form = document.forms[0];
+        const errors = [];
+        function showErrors(){
+            const ul = document.body.querySelector('ul');
+            ul.innerHTML='';
+            errors.forEach(error => {
+                const li = document.createElement('li');
+                li.textContent = error;
+                ul.append(li);
+            })
+            errors.length = 0;
+        }
+  
+//         form.addEventListener('submit' , (event) => {
+//         event.preventDefault()
+// })
+        
+
+        const text = form.elements.text.value;
+        if (text.length === 0) {
+            errors.push('Ошибка!');
+        }
+        alert('Ошибка');
+
+        function pressForm() {
+            const text = form.elements.text.value;
+            const bar = document.getElementById("bar");
+            const li = document.createElement("li");
+            li.textContent = text;
+            bar.append(li);
+        }
+        const pressButton = form.elements.press.value;
+        // form.elements.press.addEventListener("click", showErrors)
+        form.elements.press.addEventListener("click", pressForm)
+       
+
+
+
+    </script>
+</body>
+
+</html>
