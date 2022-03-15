@@ -35,12 +35,13 @@
             })
             errors.length = 0;
         }
-  
-//         form.addEventListener('submit' , (event) => {
-//         event.preventDefault()
-// })
-        
 
+
+// form.addEventListener('submit', event => {
+//   event.preventDefault()
+// })
+  
+form.elements.text.addEventListener('submit', showErrors)
         const text = form.elements.text.value;
         if (text.length === 0) {
             errors.push('Ошибка!');
@@ -55,10 +56,7 @@
             bar.append(li);
         }
         const pressButton = form.elements.press.value;
-        // form.elements.press.addEventListener("click", showErrors)
         form.elements.press.addEventListener("click", pressForm)
-       
-
 
 
     </script>
