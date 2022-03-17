@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #num {
+        #btn {
             width: 50px;
             height: 19px;
         }
@@ -21,8 +21,8 @@
 
 <body>
     <form>
-        <input type="url" id="img-url"  placeholder="Введите URL картинки" src="">
-        <input type="submit" class="num" value="">
+        <input type="url" id ="image"  placeholder="Введите URL картинки" src="">
+        <input type="submit" class="btn" value="">
         <div></div>
     </form>
 
@@ -38,26 +38,27 @@
         // Взять введенный url и вставить в div картинку с этим url
         // Если картинка не грузится вывести в div сообщение об ошибке
         
-        const form = document.forms[0];
-  const button = document.querySelector('#button');
+  const form = document.forms[0];
   const div = document.querySelector('div');
-  const inputImage = document.querySelector('#img-url');
+  const urlImg = document.querySelector('#image');
+  const button = document.querySelector('#btn');
+  console.log(urlImg);
   
-  form.addEventListener('submit', updateImageUrl);/*вешаем событие на сабмит формы*/
-  function updateImageUrl(event){
-    event.preventDefault();/*отменяем действия браузера по умолчанию, иначе не будет виден результат*/
-    const img = document.createElement('img');/*создаем img*/
-    img.src = inputImage.value;/*значение инпута будет равняться пути картинки*/
-    div.append(img);/*помещаем img в div*/
-  
-  img.addEventListener('load', showErrors);
-  function showErrors(){
-      if(img.src != inputImage.value){
-          div.textContent = 'Ошибка';
+  function addUrlImg(e){
+    e.preventDefault();
+    const img = document.createElement('img');
+    img.src = urlImg.value;
+    div.append(img);
+    img.addEventListener('load', showError);
+
+  function showError(){
+      if(img.src != urlImg.value){
+          div.textContent = 'ERROR!!!!';
       }
   }
-  showErrors()
+  showError()
 }
+form.addEventListener('submit', addUrlImg);
 
         </script>
 </body>
