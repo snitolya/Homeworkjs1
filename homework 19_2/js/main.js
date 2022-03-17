@@ -22,7 +22,7 @@ function createTodoList(event) {
 }
 form.addEventListener('submit', createTodoList);
 
-input.addEventListener('input' , function(){
+input.addEventListener('submit' , function(){
     if(this.value.length>10){
         this.classList.remove('is-invalid');
         this.classList.add('is-valid');
