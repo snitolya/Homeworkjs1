@@ -32,6 +32,9 @@ input.addEventListener('input' , function(){
     }
 })
 
+const select = document.querySelector('#inputPriority');
+console.log('inputPriority');
+
  
 
 
