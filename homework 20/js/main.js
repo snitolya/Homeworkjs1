@@ -10,18 +10,18 @@
 function loadUserInTable(page){
 fetch('https://randomuser.me/api/?page=${page}')
 .then ((response) => response.json())
-.then((json)=>{
-console.log(json);
+.then((user)=>{
+console.log(user);
 const photo = document.body.querySelector('#photo');
-photo.src = json.results[0].picture.medium;
+photo.src = user.results[0].picture.medium;
 const gender = document.body.querySelector('#gender');
-gender.textContent = json.results[0].gender;
+gender.textContent = user.results[0].gender;
 const name = document.body.querySelector('#name');
-name.textContent = `${json.results[0].name.first} ${json.results[0].name.last}`;
+name.textContent = `${user.results[0].name.first} ${user.results[0].name.last}`;
 const email = document.body.querySelector('#email');
-email.textContent = json.results[0].email;
+email.textContent = user.results[0].email;
 const phone = document.body.querySelector('#phone');
-phone.textContent = json.results[0].phone;
+phone.textContent = user.results[0].phone;
  window.user=user.results[0];
  
 });
