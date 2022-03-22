@@ -22,9 +22,7 @@ const email = document.body.querySelector('#email');
 email.textContent = json.results[0].email;
 const phone = document.body.querySelector('#phone');
 phone.textContent = json.results[0].phone;
-const table = document.body.querySelector('tbody');
-const tableRow = document.createElement('trr');
-tbody.append(tableRow);
+ window.user=user.results[0];
  
 });
 }
@@ -41,49 +39,18 @@ console.log(this.dataset.page);
 
 
 
-const buttonAdd = document.body.querySelectorAll('button')[0];
- console.log(buttonAdd);
- buttonAdd.addEventListener('click', (e)=>{
-    e.preventDefault();
-    loadUserInTable();
-     })
+const buttonAdd = document.body.querySelectorAll('button')[0].addEventListener('click', function()=>{
+const tr = document.createElement('tr');
+const content = `<td>
+<img src ="${user.picture.medium}" alt="">
+</td>
+ <td>${user.gender}</td>
+ <td>Açelya Leus</td>
+ <td>celya.leus@example.com</td>
+ <td>(300)-811-6504</td>`;
+tr.innerHTML = content;
+document.body.querySelector('tbody').append(tr);
 
-
-
-
- //https://htmlweb.ru/java/example/add_row_in_table.php
-
-
-
-// function loadNextUser(){
-// const buttonNext = document.body.querySelectorAll('button')[1];
-// console.log(buttonNext);
-// buttonNext.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   e++;
-//  })
-//  const photo = document.body.querySelector('#photo');
-//  photo.src = user.picture.medium;
-//  const gender = document.body.querySelector('#gender');
-//  gender.textContent = user.gender;
-//  const name = document.body.querySelector('#name');
-//  name.textContent = `${user.name.first} ${user.name.last}`;
-//  const email = document.body.querySelector('#email');
-//  email.textContent = user.email;
-//  const phone = document.body.querySelector('#phone');
-//  phone.textContent = user.phone;
-//  console.log(phone);
  
-// }
-//   fetch('https://randomuser.me/api')
-//     .then((response) => {
-//       console.log(response)
-//       return response.json()
-//     })
-//     .then(user => {
-//       console.log(user)
-//     const userMan = document.querySelector('.col-md-8') 
-//     console.log(userMan);
-    
-//     })
+
 
