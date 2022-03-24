@@ -46,10 +46,7 @@ function currentTask(parent, task){
     form.append(input);
     div.append(form, span);
     parent.append(div);
-
-    //Навесить обработчики на новую строку
-    input.onchange = testTask;
-
+    input.addEventListener('click',testTask);
 })
 }
 
@@ -61,15 +58,6 @@ function testTask() {
     tasks.find(e => e.id === id).completed = this.checked;
     console.log(tasks); // Тестим
 }
-
-
-// input.addEventListener('onchange', function checkbox_change() {
-//     let id = +this.id.match(/^task-(\d+)$/)[1]; // поиск task и возвращает в нём нужный id (по индексу)
-//     tasks.find(e => e.id === id).completed = this.checked;
-//     console.log(tasks); // Тестим
-// }
-//     )
-
 
 
 
