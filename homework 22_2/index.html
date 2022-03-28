@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<!-- <script>
+    Напишите функцию, с помощью которой можно будет выполнять различные действия с задержкой.
+
+// функция, которую нужно реализовать
+const sleep = ms => { ... }
+
+// её использование для выполнения действия с задержкой 5 секунд
+sleep(5000).then(() => {
+ console.log('Выполнилось через 5 секунд!');
+});
+// её использование для выполнения действия с задержкой 10 секунд
+sleep(10000).then(() => {
+ console.log('Выполнилось через 10 секунд!');
+});
+  </script> -->
+
+     <script>
+    const sleep = ms => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    sleep(5000).then(() => {
+      console.log('Выполнилось через 5 секунд!');
+    });
+    sleep(10000).then(() => {
+      console.log('Выполнилось через 10 секунд!');
+    });
+  
+  </script>
+
+
+
+
+</body>
+</html>
