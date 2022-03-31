@@ -119,7 +119,7 @@ rightList.addEventListener('click', function (event){
 })
 
 
-rightList.addEventListener('click', function (event) {
+rightList.addEventListener('click', function (event) { // при снятии флажка готово возвращает задачу в левую сторону 
     if (event.target.tagName === 'INPUT') {
         console.log(event.target);
         const data = {
