@@ -38,21 +38,21 @@ function loadDataInTable(){
 
 
 
-   // airline.forEach(item =>{
-   //    //console.log(oneAirline);
-   // const tr = document.body.querySelector(tr);
-   // const list = `<th scope="row">1</th>
-   //   <td class='id'>${item}</td>
-   //   <td class='name'>${item}</td>
-   //   <td class='country'>${item}</td>
-   //   <td class='logo'>${item}</td>
-   //   <td class='slogan'>${item}</td>
-   //   <td class='head_quaters'>${item}</td>
-   //   <td class='website'>${item}</td>
-   //   <td class='established'>${item}</td>`
-   //   tr.textContent = list;
-   //   document.body.querySelector('tbody').append('.all_airlines');
-   // });
+   airline.forEach(item =>{
+      //console.log(oneAirline);
+   const tr = document.body.querySelector(tr);
+   const list = `<th scope="row">1</th>
+     <td class='id'>${item}</td>
+     <td class='name'>${item}</td>
+     <td class='country'>${item}</td>
+     <td class='logo'>${item}</td>
+     <td class='slogan'>${item}</td>
+     <td class='head_quaters'>${item}</td>
+     <td class='website'>${item}</td>
+     <td class='established'>${item}</td>`
+     tr.textContent = list;
+     document.body.querySelector('tbody').append('.all_airlines');
+   });
    
    })
       
